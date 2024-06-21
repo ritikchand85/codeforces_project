@@ -2,7 +2,7 @@
   "name": "awesome_app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ritikchand85.github.io/codeforces_analyser/",
+  "homepage": "https://ritikchand85.github.io/codeforces_project/",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

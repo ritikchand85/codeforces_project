@@ -61,7 +61,9 @@ const BarGraph = (props) => {
     scales: {
       x: {
       
-        
+        font:{
+          size:5,
+        },
         beginAtZero: true,
 
       },
