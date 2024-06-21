@@ -1,0 +1,652 @@
+/*old way to write
+react and react-dom are modules
+var React=require('react');
+var ReactDOM=require('react-dom');*/
+//new way to write   and babel convert this advance javascript code  into browser specific javascript
+//babel basically like a trans-compiler
+/*
+//react module helps in to write jsx
+import React from 'react';
+//react-dom module helps in dom manipulation
+import ReactDOM from 'react-dom';
+//<h1>HELLO WOELD</h1> is not html,is basically jsx(javascript extension) which is also converted to html by babel
+ReactDOM.render(<h1>HELLO WORLD!</h1>,document.querySelector('#root'));*/
+
+// let React=require('react');
+// let ReactDom=require('react-dom');
+// ReactDom.render(React.createElement("h1",null,"this is ritik"),document.querySelector('#root'));
+//so we can say react module is used for javascript extension (jsx)
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+// const element = <h1>Hello, world!</h1>;
+
+// ReactDOM.render(element, document.getElementById('root'));
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+// const element = <h1>Hello, world!</h1>;
+
+// ReactDOM.render(element, document.getElementById('root'));
+
+
+
+
+
+
+
+
+// JSX stands for JavaScript XML.
+
+// Here's a breakdown of each part:
+
+// JavaScript: JSX is primarily used in JavaScript code. JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for building interactive and dynamic web applications.
+// XML: XML stands for eXtensible Markup Language. It's a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. XML is often used to store and transport data. 
+// In the context of JSX, the "XML" part refers to the HTML-like syntax that JSX uses to define elements.
+// So, when you combine "JavaScript" with "XML", you get JSX, which is a syntax extension for JavaScript that allows you to write HTML-like code directly within JavaScript code, making it easier to work with and manipulate UI elements
+//  in web applications built with libraries like React.
+
+
+
+//render function takes only one element so if we have to use more than one element we use div
+// ReactDom.render(
+//     <div>
+//         <h1>this is nikhil</h1>
+//         <p>this is my mom</p>
+//         <h2>this is my father</h2>
+//     </div>,document.querySelector('#root')
+
+// )
+
+//we can also do same thing without help of div by using array
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// ReactDom.render(
+//     [
+//         <h1>this is baadshah</h1>,
+//         <h2>you are my hero</h2>,
+//         <h3>you are great</h3>
+//     ],
+//     document.querySelector('#root')
+    
+// )
+
+// let h1=document.createElement("h1");
+// h1.innerText="hello brother";
+// let parent=document.querySelector('#root');
+// parent.appendChild(h1);
+
+
+//React fragment
+//basically when we use like this
+/*ReactDom.render(
+    //     <div>
+    //         <h1>this is nikhil</h1>
+    //         <p>this is my mom</p>
+    //         <h2>this is my father</h2>
+    //     </div>,document.querySelector('#root')
+    
+    // )*/
+   // and check in console that code 
+   /* basically create another div inside the <div class="root"> which is not preferrable when we use css but it doesn't occur while using as array
+   we can also remove this problem by using React.fragment*/
+//    import React from 'react';
+// import ReactDom from 'react-dom';
+// ReactDom.render(
+//     <React.Fragment>
+//         <h1>this is baadshah</h1>
+//         <h2>you are my hero</h2>
+//         <h3>you are great</h3>
+//         </React.Fragment> ,
+//     document.querySelector('#root')
+    
+// )
+
+//we can also use short syntax of React.Fragment i.e <>,</>
+
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// ReactDom.render(
+//     <>
+//         <h1>this is baadshah</h1>
+//         <h2>you are my hero</h2>
+//         <h3>you are great</h3>
+//         </> ,
+//     document.querySelector('#root')
+    
+// )
+
+
+/*practice 
+import React from 'react';
+import ReactDom from 'react-dom';
+ReactDom.render(
+    <>
+        <h1>This are my best movies</h1>
+         <ol type="a">
+            <li>SALAAR</li>
+            <li>KGF</li>
+            <li>NARUTO</li>
+         </ol>
+    </>,document.querySelector('#root')
+)*/
+
+
+
+
+//how to use javascript expressions in jsx
+//basiaclly we are in the js file and using react we able to write html or jsx inside js but if we have to use js inside jsx we use curly braces { }
+//we can only use expressions(operator+operand) because expression returns value directly
+//but we can't use statements ,because it first check then gives result
+/*it gives error because we use statemnet
+<h3>you are {
+    if(3>2){
+    console.log("hyy")}
+    else{
+        console.log("byy")
+    }
+}</h3>*/
+
+/*import React from 'react';
+import ReactDom from 'react-dom';
+let ritik="handosme";
+ReactDom.render(
+    <>
+    <h1>Ritik is a {ritik} boy</h1>
+    <h2>2+2 is equal to {2+2}</h2>
+    <h3>random no between 0 and 1 is {Math.random()}</h3>
+   
+
+
+    </>,document.querySelector('#root')
+)*/
+
+
+
+/*template literals in react
+
+let React=require('react');
+let ReactDom=require('react-dom');
+let fname="Ritik";
+let lname="chand";
+//ReactDom.render(<h1>MY FIRST NAME IS {fname} AND MY LAST NAME IS {lname}</h1>,document.querySelector('#root'));
+//we can do similar thing by using template literals
+//in template literal we use backtic and dollar
+//for example-console.log(`hello ${fname}`)
+//ReactDom.render(<h1>{`MY FIRST NAME IS ${fname} AND LAST NAME IS ${lname}`}</h1>,document.querySelector('#root'));
+/*console.log is not an expression so it gives me error
+ReactDom.render(<h1>{console.log(`my name is ${fname}`)}</h1>,document.querySelector('#root'));*/
+
+
+//DATE object in javascript
+/*using this object we can find current time and date
+
+let date=new Date();
+console.log(date.getDate());
+
+console.log(date.getDay()); //it gives indexing value 0->sunday
+console.log(date.getMonth());//it also answer in indexing
+console.log(date.getFullYear());
+console.log(date.getTime());
+console.log(date.getMinutes());
+console.log(date.toLocaleDateString())//to write date in string form like 30/12/2023
+console.log(date.toLocaleTimeString());//1:33:31 pm
+
+import React from 'react';
+import ReactDom from 'react-dom';
+let date=new Date();
+ReactDom.render(<>
+    <h1>current date is {date.toLocaleDateString()}</h1>
+    <h1>current time is {date.toLocaleTimeString()}</h1>
+</>,document.querySelector('#root'));*/
+
+
+
+/*How to use ATTRIBUTES in JSX
+import React from 'react';
+import ReactDom from 'react-dom';
+let url="https://i.pinimg.com/originals/f6/a5/65/f6a565da14074f0e06885afa7c6b7c4d.jpg";
+let google_link="https://www.google.com/";
+
+ReactDom.render(
+    <>
+        <h1>Welcome in my galery</h1>
+        <a href="https://www.google.com/" target="_blank">
+        <img src="https://i.pinimg.com/originals/f6/a5/65/f6a565da14074f0e06885afa7c6b7c4d.jpg" alt="images"/></a>
+        <img src={url} alt="images"/>
+    </>,document.querySelector('#root')
+)*/
+
+//ADD CSS INTO REACT
+
+/*EXTERNAL CSS
+//here we use className atrribute istead of class because class is a reserve keyword in React
+
+// *{
+//   margin:0;
+//   padding:0;
+//   box-sizing:border-box;
+// }
+
+// .heading{
+//   text-align:center; 
+//   /*text-transform capitalize,make first letter capital of each word
+//   text-transform:capitalize;
+//   /* text-shadow-horizontal distance in right from text, vertical distance in down from text,blur,shadow color*/
+//   text-shadow:2px -2px 2px grey;
+//   /* margin:auto basically center the element within its parent element */
+  
+  
+// }
+
+// .line{
+//   height:2px;
+//   background-image:linear-gradient(to right,black 0%,gold 20%,orange 60%,gold 100%,black 1%)
+// }
+/*import React from 'react';
+import ReactDom from 'react-dom';
+import './index.css';
+ReactDom.render(
+    <>
+<h1 className="heading">my name is ritik</h1>
+<div className="line">
+
+</div>
+</>
+,document.querySelector('#root'));*/
+
+/*INLINE CSS 
+//inline css we used by using objects
+import React from 'react';
+import ReactDom from 'react-dom';
+const heading={
+//covert all kewab case(hypen )into camel case
+        textAlign:'center', 
+        //text-transform capitalize,make first letter capital of each word
+        text-transform:capitalize;
+        //text-shadow-horizontal distance in right from text, vertical distance in down from text,blur,shadow color
+        textShadow:'2px -2px 2px grey',
+        // margin:auto basically center the element within its parent element 
+        
+        
+      }
+
+      const line={
+    
+            height:'2px',
+            backgroundImage:'linear-gradient(to right,black 0%,gold 20%,orange 60%,gold 100%,black 1%)',
+          }
+          ReactDom.render(
+            <>
+        <h1 style={heading}>my name is ritik</h1>
+        <div style={line}>
+        
+        </div>
+        </>
+        ,document.querySelector('#root'));
+        */
+
+
+        /*how to add google fonts in react
+        its very simple go to google fonts and import it in html head section*/
+
+
+
+
+        /*how to use components in react
+import React from 'react';
+import ReactDom from 'react-dom';
+import App from './App.jsx';
+//to use components we have to make jsx file whose first name should be capital
+ReactDom.render(<App/>,document.querySelector('#root'))
+//we can also do all these thing by importing just one componenet in index.js by using app.jsx file*/
+
+/*import React from 'react';
+
+function Header() {
+  return <header>This is the Header</header>;
+}
+
+export default Header;*/
+
+
+/*import React from 'react';
+
+function Footer() {
+  return <footer>This is the Footer</footer>;
+}
+
+export default Footer;*/
+
+
+/*import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <p>Main Content</p>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;*/
+
+
+/*import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));*/
+
+
+/*Import export in react
+
+/*content in Practice.jsx
+let name="ritik";
+let caste="rajput";
+function gender(){
+    return 'male';
+}
+export {name,caste,gender};
+)*/
+
+/*main content
+import React from 'react';
+import ReactDom from 'react-dom';
+import App from './App.jsx';
+//import {name,caste,gender} from './Practice.jsx';
+import * as c from './Practice.jsx';
+
+ReactDom.render(
+    //<h1>{name} {caste} {gender()}</h1>
+    <h1>{c.name} {c.caste} {c.gender()}</h1>
+    ,
+    document.querySelector('#root')
+)*/
+
+/*props in react
+//with the help of content we can make userdefined elements similarly with the help of props(properties) we can make userdefined attributes
+import React from 'react';
+import ReactDom from 'react-dom';
+//title attribute with image tag is used to show additional information about image while hovering
+//props basically refer an object
+//we can also use component with help of other file by importing it
+function Cards(props){
+  console.log(props.altkey);
+  return (<div>
+    <img src={props.imgsrc} title={props.titlename} alt={props.altkey}/>
+
+  </div>);
+}
+//we are passing imgsrc,titlename,and altkey as custom attributes made by me to card components as props which sets the value
+ReactDom.render(<>
+<Cards imgsrc="https://logos-world.net/wp-content/uploads/2020/04/Netflix-Emblem.jpg" titlename="netflix" altkey="images"/>
+<Cards imgsrc="https://logos-world.net/wp-content/uploads/2020/04/Netflix-Logo.png" titlename="netflix" altkey="images"/>
+<Cards imgsrc="https://th.bing.com/th/id/OIP.FBxvZr22LbA9zzGe5bl0owHaHa?w=512&h=512&rs=1&pid=ImgDetMain" titlename="netflix" altkey="images"/>
+<Cards imgsrc="https://logos-world.net/wp-content/uploads/2020/04/Netflix-Emblem.jpg" titlename="netflix" altkey="images"/>
+</>,document.querySelector('#root'));*/
+
+
+
+//map,filter and reduce in react
+
+
+/*we know map function will not update the existing array so why in this code x array is updating
+
+
+const x=[{
+    name:"Ritik",
+    age:"20"
+},
+{
+name:"Nikhil",
+age:"21"
+},
+{
+    name:"Rahul",
+    age:"14"
+}
+]
+
+let arr=x.map((element)=>{
+    //console.log(index);
+    console.log(element.name);
+    
+    return element.name="pinku";
+})
+
+console.log(arr);
+console.log(x);
+ChatGPT
+ChatGPT
+In the provided code, the map() function is used to iterate over the x array and modify each element's name property to "pinku". Let's break down what's happening:
+
+The map() function iterates over each element of the x array.
+For each element, the function modifies the name property to "pinku".
+The modified elements are returned as a new array, which is stored in the variable arr.
+The original x array remains unchanged.
+However, it might seem like the original array x is also getting updated. This is because each element in the x array is an object. In JavaScript, objects are reference types. When you modify an object stored in an array, you're actually modifying the reference to that object, not creating a new object.
+
+So, when you modify element.name inside the map() function, you're modifying the same objects that are present in both x and arr. Therefore, when you log x after arr, you see the modified objects in x as well.*/
+
+//array destructuring in javascript
+// Array destructuring is a feature in JavaScript that allows you to extract values from arrays and assign them to variables in a concise and readable way. It provides a convenient syntax for extracting multiple values from an array and assigning them to variables in a single statement.
+
+// Here's a basic example:
+
+// javascript
+// Copy code
+// const numbers = [1, 2, 3, 4, 5];
+
+// // Destructuring assignment
+// const [first, second, third] = numbers;
+
+// console.log(first);  // Output: 1
+// console.log(second); // Output: 2
+// console.log(third);  // Output: 3
+// In this example, array destructuring is used to extract the first three elements of the numbers array and assign them to variables first, second, and third respectively.
+
+// Array destructuring is commonly used in various scenarios:
+
+// Assigning array elements to variables: As shown in the example above, you can easily assign values from an array to individual variables.
+
+// Swapping variables: Destructuring can be used to swap the values of variables without needing a temporary variable.
+
+// javascript
+// Copy code
+// let a = 1;
+// let b = 2;
+
+// [a, b] = [b, a];
+
+// console.log(a); // Output: 2
+// console.log(b); // Output: 1
+// Function returning multiple values: Functions can return arrays, and array destructuring can be used to conveniently capture these values.
+
+// javascript
+// Copy code
+// function getNumbers() {
+//     return [1, 2, 3];
+// }
+
+// const [x, y, z] = getNumbers();
+// console.log(x, y, z); // Output: 1 2 3
+// Iterating over arrays: Destructuring can be used with array iteration methods like map, forEach, etc., to directly access elements and their indices.
+
+// javascript
+// Copy code
+// const numbers = [1, 2, 3, 4, 5];
+
+// numbers.forEach((number, index) => {
+//     console.log(`Number ${number} is at index ${index}`);
+// });
+// Overall, array destructuring simplifies code, makes it more readable, and reduces the need for repetitive array element access.
+   
+
+//Hooks in React
+//whenever we have to change the state like if i click on click me button count will be increased and display it will not happen using functional components.
+//we can acheive this functionality using class components
+//Note to represent Inheritance we use extends in js 
+//for making data and methods  private we add # before it otherwise it would remain by default public
+//for example function #ritik()
+//there is no protected in js 
+/*index.js file
+import React from 'react'
+import ReactDom from 'react-dom'
+import App from  './App.jsx'
+ReactDom.render(
+<>
+    <App></App>
+</>
+    ,document.querySelector('#root')
+);
+*/
+/*App.jsx file
+import React from 'react'
+import ReactDom from 'react-dom'
+import {Child} from './Practice.jsx'
+import { Component } from 'react'
+
+class App extends Component{
+    constructor(props){
+        super(props);
+    }
+    render(){
+        return (
+            <Child/>
+
+        )
+    }
+}
+export default App;*/
+
+/*Practice.jsx file
+import React, { Component } from 'react';
+
+class Child extends Component {
+  state = {
+    count: 0,
+  };
+
+  handleClick = () => {
+    this.setState((prevState)=>{
+        return {
+        //or we can write count:this.state.count+1
+      count: this.state.count + 1,
+    }
+});
+    
+  };
+
+  render() {
+    return (
+      <>
+        <h1>No of times you've clicked : {this.state.count}</h1>
+        <button className="c" onClick={this.handleClick}>click me</button>
+      </>
+    );
+  }
+}
+
+export {Child};*/
+
+//To acheive this functionality in functional components we use HOOKS
+//in Hooks we use useState(initial value of state) it is an array of two values [initial state value,update function]
+/*practice.jsx code\
+import React from 'react'
+import ReactDom from 'react-dom'
+import { Component } from 'react'
+import {useState} from 'react'
+
+
+
+
+
+    function Practice(Props){
+        const [count,setCount]=useState(0);
+          const handle_event=()=>{
+            
+            
+            setCount((prevCount)=>{
+                return prevCount+1;
+            });
+         }
+        return (
+            <>
+         <h1>No of times you've clicked : {count}</h1>
+         <button class="c" onClick={handle_event}>click me</button>
+
+
+        </>
+        )
+    }
+
+
+
+export default Practice
+
+*/
+
+/*promises in javascript
+// let ritik=new Promise((resolve,reject)=>{
+//     resolve(console.log("my name is ritik"));
+//     reject(new Error("error occured"));
+// });
+
+// ritik.then((response)=>{
+// console.log("resolve");
+// }).catch((error)=>{
+//     console.log(error);
+// });
+
+async function greet(data){
+return new Promise((resolve,reject)=>{
+    resolve(data);
+    reject(new Error("error occured"));
+});
+}
+
+async function yes(){
+    
+    try{
+        const p=await greet("hello");
+       console.log(p);
+    }
+    catch(error){
+         console.log(new Error("error occured"));
+    }
+}
+
+yes();
+
+// fetch(url).then((response)=>{
+//     if(!response.ok){
+//         throw new Error("error occured");
+//     }
+//     return response.json();
+// }).then((data)=>{
+//     console.log(data);
+// }).catch(err){
+//     console.log(err);
+// }
+
+*/
+
+
+
+
+    
+
+
+
+
+
+
+

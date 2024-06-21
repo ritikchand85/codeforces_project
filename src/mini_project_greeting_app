@@ -1,0 +1,38 @@
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// let currdate=new Date(2023,12,31,21);
+// let hrs=currdate.getHours();
+// let str="";
+// let css3={
+//     display:'flex',
+//     justifyContent:'center',
+//     alignItems:'center',
+//     backgroundColor:'gold',
+//     height:'100vh',
+
+// }
+// let css1={
+//     color:'red',
+//     textTransform:'uppercase',
+// }
+// let css2={
+//     marginLeft:'3px',
+//     color:'',
+//     textTransform:'uppercase',
+// }
+// if(hrs>=0&&hrs<12){
+//     str=' GOOD MORNING';
+//     css2.color="blue";
+// }
+// else if(hrs>=12&&hrs<18){
+//     str=" GOOD AFTERNOON";
+//     css2.color="red";
+// }
+// else if(hrs>=18&&hrs<=23){
+//     str=" GOOD NIGHT";
+//     css2.color="yellow";
+// }
+// ReactDom.render(
+//     <h1 style={css3}><span style={css1}>HELLO RITIK </span><span style={css2}>{str}</span></h1>,
+//     document.querySelector('#root')
+// )

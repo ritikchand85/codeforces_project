@@ -1,0 +1,40 @@
+/*Practice.jsx content
+function add(a,b){
+return a+b;
+}
+function subtract(a,b){
+    return a-b;
+}
+function multiply(a,b){
+    return a*b;
+}
+function divide(a,b){
+    let div=a/b;
+    //if we want only two decimals
+    //toFixed is used for constraint number till 2 decimal places
+    div=div.toFixed(2);
+    return div;
+}
+
+export {add,subtract,multiply,divide};*/
+
+
+/*index.js code
+import React from 'react';
+import ReactDom from 'react-dom';
+import {add,subtract,multiply,divide} from './Practice.jsx'
+//parseInt is used to convert string into int
+//toString is used to convert into string
+let a=parseInt(prompt("Enter the number"));
+let b=parseInt(prompt("Enter the number"));
+ReactDom.render(
+    //<h1>{name} {caste} {gender()}</h1>
+    <>
+    <h1>the addition of two numbers is {add(a,b)}</h1>
+      <h1>the subtraction of two numbers is {subtract(a,b)}</h1>
+      <h1>the multiplication of two numbers is {multiply(a,b)}</h1>
+      <h1>the division of two numbers is {divide(a,b)}</h1>
+      </>
+    ,
+    document.querySelector('#root')
+)*/
